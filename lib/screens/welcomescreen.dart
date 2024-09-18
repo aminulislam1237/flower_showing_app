@@ -4,23 +4,50 @@ class welcomesreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Container(
-        padding: EdgeInsets.only(top: 100,bottom: 40),
-        decoration: BoxDecoration(
-          color: Colors.white54,
-        ),
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-       ListView.builder(
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+       SizedBox(
+         height: 370,
+         child: ListView.builder(
          itemCount: 3,
          scrollDirection: Axis.horizontal,
          itemBuilder: (context, index) {
-         return Image(image: AssetImage('assets/image/bg.jpg'));
-       },)
-          ],
-        )
+         return Image(image: AssetImage('assets/image/new.png'));
+         },),
+       )
+          ,Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(height: 30,)
+                ,Text('Enjon your',style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 40,
+                ),)
+                ,Text('Life wih Plants',style: TextStyle(
+                  fontSize: 40,
+                  color: Colors.black54,
+                  fontWeight: FontWeight.bold
+                ),)
+              ],
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                height: 50,
+              ),
+              Icon(
+               Icons.navigate_next_outlined,
+               size: 100,
+               color: Colors.green,
+              )
+            ],
+          )
+        ],
       ),
     );
   }
